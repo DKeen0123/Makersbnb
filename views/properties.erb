@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <% @properties.each do |property|%>
+      <h1> Details: </h1>
+      <img src="<%= property.url %>" alt="Test">
+      <p>Email:<a href="mailto:<%= property.email %>"><%= property.email %></a></p>
+    <% end %>
+  </body>
+</html>

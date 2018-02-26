@@ -8,18 +8,21 @@ require 'dm-postgres-adapter'
 class MakersBnb < Sinatra::Base
 
   get '/' do
-    redirect "/index"
+    redirect "/properties/new"
   end
 
-  get '/index' do
+  get '/properties/new' do
     erb(:index)
   end
 
-  post '/add-listing' do
-    @email = params[:email]
-    @picture = params[:picture]
-    erb :add_listing
-    # redirect '/index'
+  post '/properties' do
+    Property.create(email: params[:email], url: params[:url])
+    redirect '/properties'
+  end
+
+  get '/properties' do
+    @properties = Property.all
+    erb(:properties)
   end
 
 end
