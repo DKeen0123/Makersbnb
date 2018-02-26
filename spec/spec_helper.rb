@@ -1,5 +1,10 @@
+ENV["ENVIRONEMENT"] = 'test'
+
 require 'capybara'
 require 'capybara/rspec'
+require 'database_cleaner'
+require 'data_mapper'
+require 'dm-postgres-adapter'
 require 'rspec'
 require 'rake'
 
@@ -16,6 +21,16 @@ RSpec.configure do |config|
 
   config.mock_with :rspec do |mocks|
     mocks.verify_partial_doubles = true
+  end
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with :truncation
+  end
+
+  config.before :each do
+    DatabaseCleaner.start
+    Property.create(email: 'test@example.com', url: "https://example.com")
   end
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
