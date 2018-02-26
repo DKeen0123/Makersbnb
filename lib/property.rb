@@ -11,6 +11,6 @@ class Property
 
 end
 
-DataMapper.setup(:default, "postgres://localhost/bnb_test")
+DataMapper.setup(:default, "postgres://localhost/bnb_#{ENV['ENVIRONMENT']}")
 DataMapper.finalize
 DataMapper.auto_upgrade!
