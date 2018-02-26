@@ -14,6 +14,7 @@ class User
 
 
 
+
 end
 
 DataMapper.setup(:default, "postgres://localhost/bnb_#{ENV['ENVIRONMENT']}")
