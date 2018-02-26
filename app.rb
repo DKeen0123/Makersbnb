@@ -12,7 +12,7 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/properties/new' do
-    erb(:index)
+    erb(:property_new)
   end
 
   post '/properties' do
