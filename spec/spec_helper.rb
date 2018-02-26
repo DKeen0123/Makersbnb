@@ -30,7 +30,7 @@ RSpec.configure do |config|
 
   config.before :each do
     DatabaseCleaner.start
-    Property.create(email: 'test@example.com', url: "https://example.com")
+    Property.create(email: 'test@example.com', url: "https://i.imgur.com/rE8X4ir.jpg")
     User.create(name: "mike", email: "mike@test.com", password:"123")
   end
 
