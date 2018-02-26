@@ -31,6 +31,7 @@ RSpec.configure do |config|
   config.before :each do
     DatabaseCleaner.start
     Property.create(email: 'test@example.com', url: "https://example.com")
+    User.create(name: "mike", email: "mike@test.com", password:"123")
   end
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
