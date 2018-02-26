@@ -4,26 +4,8 @@
     <title>Makers BnB</title>
   </head>
   <body>
-<<<<<<< HEAD:views/property_new.erb
     <h1>Welcome to Makers BnB!</h1>
-    <form  action="/properties" method="post">
-=======
-    <% if @user %>
-      <h1>Welcome, <%= @user %>!</h1>
-    <%else %>
-      <h1>Welcome to Makers BnB!</h1>
-    <%end%>
-
-    <h3>Sign up here!</h3>
-    <form  action="/new-user" method="post">
-      <input type="text" name="name" placeholder="Enter your name">
-      <input type="email" name="signupemail" placeholder="Enter your email">
-      <input type="password" name="password" placeholder="Enter a password">
-      <input type="submit" name="" value="Sign up">
-
-    </form>
-    <form action="/add-listing" method="post">
->>>>>>> user-class:views/index.erb
+    <form action="/properties" method="post">
       <input type="text" name="email" placeholder="Email">
       <input type="text" name="url" placeholder="Picture url">
       <input type="submit" name="submit" value="submit">

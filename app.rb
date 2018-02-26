@@ -10,17 +10,17 @@ class MakersBnb < Sinatra::Base
   enable :sessions
 
   get '/' do
-    redirect "/properties/new"
+    redirect "/index"
   end
 
-<<<<<<< HEAD
+
   get '/properties/new' do
     erb(:property_new)
-=======
+  end
+
   get '/index' do
     @user = session[:user]
     erb(:index)
->>>>>>> user-class
   end
 
   post '/properties' do
