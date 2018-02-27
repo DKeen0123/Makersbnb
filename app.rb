@@ -46,7 +46,7 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/sessions/new' do
-    @user = User.get(email: params[:email])
+    @user = User.first(email: params[:email])
     p @user
     p params
     session[:user_id] = @user.id
