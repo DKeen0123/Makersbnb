@@ -5,9 +5,12 @@ require './lib/user'
 require 'data_mapper'
 require 'dm-postgres-adapter'
 
-
 class MakersBnb < Sinatra::Base
   enable :sessions
+
+  # configure do
+  #   set :public_folder, File.join(File.dirname('__FILE__'), 'public')
+  # end
 
   get '/' do
     redirect "/index"

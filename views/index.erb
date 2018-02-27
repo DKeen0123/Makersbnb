@@ -1,17 +1,13 @@
-<html>
-  <body>
-    <% if @user %>
-      <h1>Welcome, <%= @user %>!</h1>
-    <%else %>
-      <h1>Welcome to Makers BnB!</h1>
-    <%end%>
+<% if @user %>
+  <h1>Welcome, <%= @user %>!</h1>
+<%else %>
+  <h1>Welcome to Makers BnB!</h1>
+<%end%>
 
-    <h3>Sign up here!</h3>
-    <form  action="/new-user" method="post">
-      <input type="text" name="name" placeholder="Enter your name">
-      <input type="email" name="signupemail" placeholder="Enter your email">
-      <input type="password" name="password" placeholder="Enter a password">
-      <input type="submit" name="" value="Sign up">
-    </form>
-  </body>
-</html>
+<h3>Sign up here!</h3>
+<form  action="/new-user" method="post">
+  <input type="text" name="name" placeholder="Enter your name">
+  <input type="email" name="signupemail" placeholder="Enter your email">
+  <input type="password" name="password" placeholder="Enter a password">
+  <input type="submit" name="" value="Sign up">
+</form>
