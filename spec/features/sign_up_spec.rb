@@ -1,6 +1,7 @@
 feature 'User sign up' do
   scenario 'A new user signs up and gets confirmation' do
-    visit '/'
+    visit '/properties'
+    click_button 'sign up'
     fill_in 'name', with: 'Jared'
     fill_in 'signupemail', with: 'jared@test.com'
     fill_in 'password', with: '123'
