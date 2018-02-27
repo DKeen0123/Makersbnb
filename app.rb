@@ -7,10 +7,18 @@ require 'dm-postgres-adapter'
 
 class MakersBnb < Sinatra::Base
   enable :sessions
+  register React::Sinatra
 
-  # configure do
-  #   set :public_folder, File.join(File.dirname('__FILE__'), 'public')
-  # end
+  configure do
+    React::Sinatra.configure do |config|
+      config.use_bundled_react = true
+      config.en = ENV["ENVIRONEMENT"] || :development
+      config.addon = true
+
+      config.asset_path = File.join("client", "dist", "server.js")
+      config.runtime = :execjs
+    end
+  end
 
   get '/' do
     redirect "/index"

@@ -9,6 +9,9 @@ gem 'pg'
 gem 'sinatra'
 gem 'rake'
 gem 'rubocop'
+gem 'react-sinatra'
+gem 'execjs'
+gem 'mini_racer'
 
 group :test do
   gem 'capybara'

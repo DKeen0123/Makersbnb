@@ -1,0 +1,26 @@
+{
+  "name": "makersbnb",
+  "version": "1.0.0",
+  "description": "## Setup",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "react-download": "0.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DKeen0123/Makersbnb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DKeen0123/Makersbnb/issues"
+  },
+  "homepage": "https://github.com/DKeen0123/Makersbnb#readme"
+}
