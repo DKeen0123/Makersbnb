@@ -17,11 +17,11 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/users' do
-    session[:user] = params[:name]
-    User.create(name: params[:name], email: params[:signupemail], password: params[:password])
+    user = User.create(name: params[:name], email: params[:signupemail], password: params[:password])
+    session[:user_id] = user.id
     redirect '/properties'
   end
-  
+
   get '/users/new' do
     erb(:sign_up)
   end
@@ -32,12 +32,24 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/properties' do
-    @user = session[:user]
+    @user = User.get(session[:user_id])
     @properties = Property.all
     erb(:properties)
   end
 
   get '/properties/new' do
     erb(:property_new)
+  end
+
+  get '/sessions' do
+    erb :log_in
+  end
+
+  post '/sessions/new' do
+    @user = User.get(email: params[:email])
+    p @user
+    p params
+    session[:user_id] = @user.id
+    redirect '/properties'
   end
 end
