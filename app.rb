@@ -50,4 +50,9 @@ class MakersBnb < Sinatra::Base
     session[:user_id] = @user.id
     redirect '/properties'
   end
+
+  post '/sessions/log-out' do 
+    session[:user_id] = nil
+    redirect '/properties'
+  end
 end
