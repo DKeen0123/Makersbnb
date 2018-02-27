@@ -1,4 +1,15 @@
-<h1>ALl properties</h1>
+<% if @user %>
+  <h1>Welcome, <%= @user %>!</h1>
+<%else %>
+  <h1>Welcome to Makers BnB!</h1>
+<%end%>
+<h2>ALl properties</h2>
+<form action="/users/new">
+  <input type="submit" value="sign up">
+</form>
+<form action="/properties/new">
+  <input type="submit" value="list property">
+</form>
 <% @properties.each do |property|%>
   <h1> Details: </h1>
   <img src="<%= property.url %>" alt="Test">
