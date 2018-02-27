@@ -12,3 +12,4 @@ class Hello extends React.Component {
 }
 
 global.Hello = Hello;
+export default Hello;
