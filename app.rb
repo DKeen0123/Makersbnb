@@ -6,6 +6,7 @@ require 'data_mapper'
 require 'dm-postgres-adapter'
 require 'react-sinatra'
 
+
 class MakersBnb < Sinatra::Base
   enable :sessions
   register React::Sinatra
@@ -26,7 +27,7 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/react-test' do
-    component = react_component("Hello", {name: "Josh"}, prerender: true)
+    @component = react_component("Hello", {name: "Josh"}, prerender: true)
     erb :react_test
   end
 
