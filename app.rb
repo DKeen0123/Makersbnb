@@ -47,8 +47,6 @@ class MakersBnb < Sinatra::Base
 
   post '/sessions/new' do
     @user = User.first(email: params[:email])
-    p @user
-    p params
     session[:user_id] = @user.id
     redirect '/properties'
   end
